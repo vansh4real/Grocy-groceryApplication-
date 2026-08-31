@@ -11,7 +11,7 @@ struct roundedButton: View {
     @State var title: String = "Title"
     var body: some View {
         Text(title)
-            .frame(minWidth: 200, maxWidth: 200, minHeight: 45, maxHeight: 45)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 45, maxHeight: 45)
             .padding()
             .foregroundStyle(.white)
             .bold()
@@ -19,7 +19,9 @@ struct roundedButton: View {
             .background(Color.grocyAzure)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .contentShape(Rectangle())
+            .padding()
     }
+        
 }
 
 #Preview {
