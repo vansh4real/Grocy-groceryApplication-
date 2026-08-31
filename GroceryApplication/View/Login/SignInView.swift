@@ -13,6 +13,7 @@ struct SignInView: View {
     @State private var isShowPicker: Bool = false
     @State private var selectedDialCode: String = "+91"
     @State private var countryFlag: String = "🇮🇳"
+    @State private var searchCountries: String = ""
     @State private var countrySheet: Bool = false
     
     
@@ -87,6 +88,7 @@ struct SignInView: View {
                             .scaledToFit()
                             .frame(maxWidth: 50,maxHeight: 50)
                     }
+                    
                 }
             }
             
@@ -94,11 +96,38 @@ struct SignInView: View {
         }
         .sheet(isPresented: $countrySheet) {
             
+            NavigationStack{
+                List(allCountries){ model in
+                    HStack{
+                        Text(model.flag)
+                        Text(model.name)
+                            .font(.body)
+                        Spacer()
+                        Text(model.dial_code)
+                            .foregroundStyle(Color(.systemGray))
+                    }
+                    .onTapGesture {
+                        self.countryFlag = model.flag
+                        self.selectedDialCode = model.dial_code
+                        self.countrySheet = false
+                    }
+                }
+            }
+            .presentationDetents([.medium, .large])
+            .searchable(text: $searchCountries, prompt: "Search for a country")
         }
        
-        
+       
     }
-    
+    private var allCountries : [CPData]{
+        if self.searchCountries.isEmpty{
+            return CPData.allCountries
+        } else{
+            return CPData.allCountries.filter {
+                $0.name.contains(self.searchCountries)
+            }
+        }
+    }
 }
 
 #Preview {
