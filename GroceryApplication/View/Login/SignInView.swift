@@ -32,7 +32,7 @@ struct SignInView: View {
                     .padding(.top)
                 
                 Capsule()
-                    .fill(Color.blue.opacity(0.14))
+                    .fill(Color.black.opacity(0.2))
                     .frame(width: 190, height: 10)
                     .blur(radius: 8)
                 
