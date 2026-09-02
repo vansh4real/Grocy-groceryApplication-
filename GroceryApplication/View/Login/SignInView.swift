@@ -90,6 +90,14 @@ struct SignInView: View {
                     }
                     
                 }
+                
+                Button{
+                    
+                }
+                label:{
+                    roundedButton(title: "Get OTP")
+
+                }
             }
             
             .frame(maxHeight: .infinity, alignment: .top)

@@ -20,12 +20,19 @@ struct WelcomeView: View {
                         .scaledToFit()
                         .frame(maxWidth: 300)
                         .padding()
+                    
+                    Capsule()
+                        .fill(Color.black.opacity(0.2))
+                        .frame(width: 190, height: 10)
+                        .blur(radius: 8)
+                        .padding(.bottom)
 
                     Text("Welcome to \n GROCY")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
+                        .padding(.top)
 
                     Text("Your one way to the grocery store")
                         .font(.subheadline)
