@@ -16,6 +16,8 @@ struct SignInView: View {
     @State private var searchCountries: String = ""
     @State private var countrySheet: Bool = false
     
+    @State private var selectedCountry:CPData = CPData.allCountries.first!
+    @FocusState private var isPhoneFieldFocused: Bool
     
     var body: some View {
         
@@ -59,38 +61,46 @@ struct SignInView: View {
                     TextField("Enter Mobile", text: $phoneNumber)
                     
                 }
+                .focused($isPhoneFieldFocused)
                 .padding()
+                .keyboardType(.phonePad)
+                .onChange(of: phoneNumber) { oldValue, newValue in
+                    if newValue.count > selectedCountry.limit{
+                        phoneNumber = String(newValue.prefix(selectedCountry.limit))
+                    }
+                }
                 
                 Divider()
                     .padding(.bottom,25)
-                
+                 
                 Text("Or connect with social media")
                     .foregroundColor(.secondary)
                     .font(.callout)
                 
-                HStack{
-                    Button{
+                if !isPhoneFieldFocused{
+                    HStack{
+                        Button{
+                            
+                        }label: {
+                            Image("googleLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: 50,maxHeight: 50)
+                        }
                         
-                    }label: {
-                        Image("googleLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 50,maxHeight: 50)
-                    }
-                    
-                    .padding()
-                    
-                    Button{
+                        .padding()
                         
-                    }label: {
-                        Image("facebookLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 50,maxHeight: 50)
+                        Button{
+                            
+                        }label: {
+                            Image("facebookLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: 50,maxHeight: 50)
+                        }
+                        
                     }
-                    
                 }
-                
                 Button{
                     
                 }
@@ -118,6 +128,8 @@ struct SignInView: View {
                         self.countryFlag = model.flag
                         self.selectedDialCode = model.dial_code
                         self.countrySheet = false
+                        self.phoneNumber = ""
+                        self.selectedCountry = model
                     }
                 }
             }

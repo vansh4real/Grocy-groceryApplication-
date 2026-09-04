@@ -749,7 +749,7 @@
     "code": "IN",
     "dial_code": "+91",
     "pattern": "##### #####",
-    "limit": 17
+    "limit": 10
 }, {
     "id": "0102",
     "name": "Indonesia",
