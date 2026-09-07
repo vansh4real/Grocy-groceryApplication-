@@ -7,7 +7,7 @@
 
 import SwiftUI
 import CountryPicker
-
+import FirebaseAuth
 struct SignInView: View {
     @State private var phoneNumber: String = ""
     @State private var isShowPicker: Bool = false
@@ -15,6 +15,7 @@ struct SignInView: View {
     @State private var countryFlag: String = "🇮🇳"
     @State private var searchCountries: String = ""
     @State private var countrySheet: Bool = false
+    @State private var verificationID: String = ""
     
     @State private var selectedCountry:CPData = CPData.allCountries.first!
     @FocusState private var isPhoneFieldFocused: Bool
@@ -101,13 +102,30 @@ struct SignInView: View {
                         
                     }
                 }
-                Button{
-                    
-                }
-                label:{
-                    roundedButton(title: "Get OTP")
-
-                }
+                Button(
+                    action: {
+//                        let fullPhoneNumber = selectedDialCode + phoneNumber
+//
+//                        PhoneAuthProvider.provider().verifyPhoneNumber(
+//                            fullPhoneNumber,
+//                            uiDelegate: nil
+//                        ) { verificationID, error in
+//
+//                            if let error = error {
+//                                print("OTP Error: \(error.localizedDescription)")
+//                                return
+//                            }
+//
+//                            if let verificationID = verificationID {
+//                                self.verificationID = verificationID
+//                                print("OTP sent successfully!")
+//                            }
+//                        }
+                    },
+                    label: {
+                        roundedButton(title: "Get OTP")
+                    }
+                )
             }
             
             .frame(maxHeight: .infinity, alignment: .top)

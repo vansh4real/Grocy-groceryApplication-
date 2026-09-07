@@ -8,15 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		5829E6A6304450000041AC5B /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 5829E6A5304450000041AC5B /* CountryPicker */; };
+		587A50A1304D810B00BEE420 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 587A50A0304D810B00BEE420 /* FirebaseAuth */; };
+		587A50A3304D817900BEE420 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 587A50A2304D817900BEE420 /* FirebaseAnalytics */; };
+		587A50A5304D818400BEE420 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 587A50A4304D818400BEE420 /* FirebaseCrashlytics */; };
+		587A50A7304D818E00BEE420 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 587A50A6304D818E00BEE420 /* FirebasePerformance */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58250B063043D908009D1977 /* GroceryApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		587A50A9304D897D00BEE420 /* Exceptions for "GroceryApplication" folder in "GroceryApplication" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 58250B053043D908009D1977 /* GroceryApplication */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		58250B083043D908009D1977 /* GroceryApplication */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				587A50A9304D897D00BEE420 /* Exceptions for "GroceryApplication" folder in "GroceryApplication" target */,
+			);
 			path = GroceryApplication;
 			sourceTree = "<group>";
 		};
@@ -28,6 +45,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5829E6A6304450000041AC5B /* CountryPicker in Frameworks */,
+				587A50A5304D818400BEE420 /* FirebaseCrashlytics in Frameworks */,
+				587A50A7304D818E00BEE420 /* FirebasePerformance in Frameworks */,
+				587A50A1304D810B00BEE420 /* FirebaseAuth in Frameworks */,
+				587A50A3304D817900BEE420 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				58250B083043D908009D1977 /* GroceryApplication */,
+				587A509F304D810B00BEE420 /* Frameworks */,
 				58250B073043D908009D1977 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +70,13 @@
 				58250B063043D908009D1977 /* GroceryApplication.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		587A509F304D810B00BEE420 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +100,10 @@
 			name = GroceryApplication;
 			packageProductDependencies = (
 				5829E6A5304450000041AC5B /* CountryPicker */,
+				587A50A0304D810B00BEE420 /* FirebaseAuth */,
+				587A50A2304D817900BEE420 /* FirebaseAnalytics */,
+				587A50A4304D818400BEE420 /* FirebaseCrashlytics */,
+				587A50A6304D818E00BEE420 /* FirebasePerformance */,
 			);
 			productName = GroceryApplication;
 			productReference = 58250B063043D908009D1977 /* GroceryApplication.app */;
@@ -265,6 +298,7 @@
 				DEVELOPMENT_TEAM = 5D4USS6Q4M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GroceryApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -298,11 +332,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5D4USS6Q4M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GroceryApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +352,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vansh.GroceryApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -377,6 +414,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5829E6A4304450000041AC5B /* XCRemoteSwiftPackageReference "CountryPicker" */;
 			productName = CountryPicker;
+		};
+		587A50A0304D810B00BEE420 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 587A509B304AF02800BEE420 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		587A50A2304D817900BEE420 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 587A509B304AF02800BEE420 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		587A50A4304D818400BEE420 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 587A509B304AF02800BEE420 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		587A50A6304D818E00BEE420 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 587A509B304AF02800BEE420 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
