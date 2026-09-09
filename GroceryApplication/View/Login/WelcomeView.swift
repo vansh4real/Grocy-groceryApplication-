@@ -40,7 +40,7 @@ struct WelcomeView: View {
                         .padding(.bottom)
 
                     NavigationLink {
-                        SignInView()
+                        HomeScreen()
                     } label: {
                         roundedButton(title: "Get Started")
                     }

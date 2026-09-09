@@ -104,6 +104,7 @@ struct SignInView: View {
                 }
                 Button(
                     action: {
+                        
 //                        let fullPhoneNumber = selectedDialCode + phoneNumber
 //
 //                        PhoneAuthProvider.provider().verifyPhoneNumber(
@@ -125,7 +126,8 @@ struct SignInView: View {
                     label: {
                         roundedButton(title: "Get OTP")
                     }
-                )
+                    )
+                
             }
             
             .frame(maxHeight: .infinity, alignment: .top)
