@@ -102,7 +102,8 @@ struct HomeScreen: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 30){
                                 
-                                Button{
+                                NavigationLink{
+                                        vegetableView()
                                     
                                 }label:{
                                     categoriesSection(image: "categoriesVeges",
@@ -112,8 +113,8 @@ struct HomeScreen: View {
                                     .id(0)
                                 }
                                 
-                                Button{
-                                    
+                                NavigationLink{
+                                    fruitView()
                                 }label:{
                                     categoriesSection(image: "categoriesFruits",
                                                       name: "Fruits",
@@ -122,8 +123,8 @@ struct HomeScreen: View {
                                     .id(1)
                                 }
                                 
-                                Button{
-                                    
+                                NavigationLink{
+                                    DairyView()
                                 }label:{
                                     categoriesSection(image: "categoriesDairy",
                                                       name: "Dairy",
@@ -133,8 +134,8 @@ struct HomeScreen: View {
                                     
                                 }
                                 
-                                Button{
-                                    
+                                NavigationLink{
+                                    BeveragesView()
                                 }label:{
                                     categoriesSection(image: "categoriesBeverage",
                                                       name: "Beverages",
@@ -216,5 +217,6 @@ struct HomeScreen: View {
 }
 
 #Preview {
+    
     HomeScreen()
 }

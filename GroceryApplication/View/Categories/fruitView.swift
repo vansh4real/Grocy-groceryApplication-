@@ -1,5 +1,5 @@
 //
-//  vegetableView.swift
+//  fruitView.swift
 //  GroceryApplication
 //
 //  Created by Vansh Tyagi on 09/09/26.
@@ -7,34 +7,33 @@
 
 import SwiftUI
 
-struct vegetableView: View {
+struct fruitView: View {
     var body: some View {
         ZStack {
             Color.tintedWhite
                 .ignoresSafeArea()
             
             VStack(alignment: .leading){
-                Text("Vegetables")
+                Text("Fruits")
                     .bold()
                     .font(.title)
                     .padding(.horizontal)
                     .frame(height: 50)
                     .background(RoundedRectangle(cornerRadius: 20)
                         .fill(Color.blueStudio))
-                
                 ScrollView(showsIndicators: false){
                     VStack {
                         HStack {
                             groceryItemList(quantity: 0,
-                                            itemImage: "tomatoes",
-                                            itemName: "Tomatoes",
-                                            itemQuantity: "1Kg",
+                                            itemImage: "Banana",
+                                            itemName: "Banana",
+                                            itemQuantity: "12 Pc",
                                             itemPrize: 40)
                             Spacer()
                             groceryItemList(quantity: 0,
-                                            itemImage: "Potatoes",
-                                            itemName: "Potatoes",
-                                            itemQuantity: "1Kg",
+                                            itemImage: "Grapes",
+                                            itemName: "Grapes",
+                                            itemQuantity: "250 g",
                                             itemPrize: 30)
                             
                         }
@@ -42,53 +41,52 @@ struct vegetableView: View {
                         
                         HStack {
                             groceryItemList(quantity: 0,
-                                            itemImage: "Ginger",
+                                            itemImage: "Watermelon",
                                             itemName: "Garlic",
-                                            itemQuantity: "100 g",
-                                            itemPrize: 40)
+                                            itemQuantity: "1.8 Kg",
+                                            itemPrize: 100)
                             Spacer()
                             groceryItemList(quantity: 0,
-                                            itemImage: "Garlic",
-                                            itemName: "Garlic",
-                                            itemQuantity: "100 g",
-                                            itemPrize: 38)
+                                            itemImage: "Mangoes",
+                                            itemName: "Mangoes",
+                                            itemQuantity: "500 g",
+                                            itemPrize: 80)
                             
                         }
                         .padding()
                         
                         HStack {
                             groceryItemList(quantity: 0,
-                                            itemImage: "Cabbage",
+                                            itemImage: "Papaya",
                                             itemName: "Cabbage",
-                                            itemQuantity: "400 g",
+                                            itemQuantity: "1 Kg",
                                             itemPrize: 60)
                             Spacer()
                             groceryItemList(quantity: 0,
-                                            itemImage: "carrot",
-                                            itemName: "Carrot",
-                                            itemQuantity: "200 g",
-                                            itemPrize: 24)
+                                            itemImage: "Guava",
+                                            itemName: "Guava",
+                                            itemQuantity: "500 g",
+                                            itemPrize: 58)
                             
                         }
                         .padding()
                         
                         HStack {
                             groceryItemList(quantity: 0,
-                                            itemImage: "Onions",
-                                            itemName: "Onion",
-                                            itemQuantity: "1Kg",
-                                            itemPrize: 56)
+                                            itemImage: "Oranges",
+                                            itemName: "Oranges",
+                                            itemQuantity: "500 g",
+                                            itemPrize: 70)
                             Spacer()
                             groceryItemList(quantity: 0,
-                                            itemImage: "Capsicum",
-                                            itemName: "Capsicum",
-                                            itemQuantity: "250 g",
-                                            itemPrize: 25)
+                                            itemImage: "Pineapple",
+                                            itemName: "Pineapple",
+                                            itemQuantity: "1 Kg",
+                                            itemPrize: 75)
                             
                         }
                         .padding()
                     }
-                    
                     Divider()
                     bottomFooter()
                 }
@@ -101,9 +99,8 @@ struct vegetableView: View {
         FooterView()
         
     }
-        
 }
 
 #Preview {
-    vegetableView()
+    fruitView()
 }
