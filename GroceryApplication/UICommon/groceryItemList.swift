@@ -9,75 +9,81 @@ import SwiftUI
 
 struct groceryItemList: View {
     @State  var quantity: Int = 0
-    @State  var itemImage : String = "tomatos"
+    @State  var itemImage : String = "tomatoes"
     @State  var itemName : String = "Tomatos"
+    @State  var itemQuantity : String = "1 Kg"
+    @State  var itemPrize = 40
     var body: some View {
-        VStack{
+        VStack {
+            VStack{
                 Image(itemImage)
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .frame(width: 100,height: 70)
-                    
-                Text(itemName)
-                    .bold()
-                    .padding(.top,1)
-                    .font(.title2)
-                    .foregroundStyle(.black.opacity(0.6))
-                    .padding(.bottom,1)
-                HStack{
-                    Button{
-                        if quantity > 0{
-                            quantity -= 1
-                        }
-                    }label: {
-                        Image(systemName: "minus")
-                            .bold()
-                            .font(.title3)
-                            .foregroundStyle(.white)
-                    }
-                    
-                    Text("\(quantity)")
+                
+                VStack(alignment: .leading) {
+                    Text(itemName)
                         .bold()
-                        .font(.title)
-                        .foregroundStyle(.white)
+                        .font(.headline)
+                        .foregroundStyle(.black.opacity(1))
                     
-                    Button{
-                        if quantity >= 0{
-                            quantity += 1
-                        }
-                    }label: {
-                        Image(systemName: "plus")
-                            .bold()
-                            .font(.title3)
-                            .foregroundStyle(.white)
+                    Text(itemQuantity)
+                        .foregroundStyle(.secondary)
+                        .bold()
+                    HStack{
+                        Text("₹")
+                        Text("\(itemPrize)")
                     }
-                    
-                    
+                    .bold()
                 }
-                .padding(.horizontal)
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(
-                            quantity > 0
-                            ? Color.sprout
-                            : Color.darkGreen
-                            
-                        )
-                )
+                .padding(.bottom,10)
+                .frame(maxWidth: .infinity,alignment: .leading)
+                
             }
             .padding()
-            .frame(maxWidth: 170)
+            .frame(maxWidth: 160)
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(
-                        quantity > 0
-                        ? Color.voiletCustom
-                        : Color.sprout
-                        
-                    )
-                    
+                    .fill(.white)
+                    .shadow(radius: 0.5))
+            
+            HStack{
+                Button{
+                    if quantity > 0{
+                        quantity -= 1
+                    }
+                }label: {
+                    Image(systemName: "minus")
+                        .bold()
+                        .font(.title3)
+                        .foregroundStyle(.darkGreen)
+                }
+                
+                Text("\(quantity)")
+                    .bold()
+                    .font(.title)
+                    .foregroundStyle(.darkGreen)
+                
+                Button{
+                    if quantity >= 0{
+                        quantity += 1
+                    }
+                }label: {
+                    Image(systemName: "plus")
+                        .bold()
+                        .font(.title3)
+                        .foregroundStyle(.darkGreen)
+                }
+                
+                
+            }
+            .padding(.horizontal)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.sprout)
             )
+        }
             
             
             

@@ -37,7 +37,7 @@ struct FooterView: View {
             )
         }
         .padding(.vertical, 5)
-        .background(Color.grocyMist)
+        
 
     }
     

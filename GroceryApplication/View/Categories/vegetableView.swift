@@ -10,61 +10,79 @@ import SwiftUI
 struct vegetableView: View {
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color.grocyAzure.opacity(0.6),
-                                    Color.grocyMist],
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-            .ignoresSafeArea()
+            Color.tintedWhite
+                .ignoresSafeArea()
             
             VStack(alignment: .leading){
-                Text("Vegetables & Fruits")
+                Text("Vegetables")
                     .bold()
                     .font(.title)
+                    
                 ScrollView(showsIndicators: false){
-                    HStack{
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                        Spacer()
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                    }
-                    HStack{
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                        Spacer()
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                    }
-                    HStack{
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                        Spacer()
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                    }
-                    HStack{
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                        Spacer()
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                    }
-                    HStack{
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
-                        Spacer()
-                        groceryItemList(quantity: 0,
-                                        itemImage: "tomatos",
-                                        itemName: "tomatos")
+                    VStack {
+                        HStack {
+                            groceryItemList(quantity: 0,
+                                            itemImage: "tomatoes",
+                                            itemName: "Tomatoes",
+                                            itemQuantity: "1Kg",
+                                            itemPrize: 40)
+                            Spacer()
+                            groceryItemList(quantity: 0,
+                                            itemImage: "Potatoes",
+                                            itemName: "Potatoes",
+                                            itemQuantity: "1Kg",
+                                            itemPrize: 30)
+                            
+                        }
+                        .padding()
+                        
+                        HStack {
+                            groceryItemList(quantity: 0,
+                                            itemImage: "Ginger",
+                                            itemName: "Garlic",
+                                            itemQuantity: "100 g",
+                                            itemPrize: 40)
+                            Spacer()
+                            groceryItemList(quantity: 0,
+                                            itemImage: "Garlic",
+                                            itemName: "Garlic",
+                                            itemQuantity: "100 g",
+                                            itemPrize: 38)
+                            
+                        }
+                        .padding()
+                        
+                        HStack {
+                            groceryItemList(quantity: 0,
+                                            itemImage: "Cabbage",
+                                            itemName: "Cabbage",
+                                            itemQuantity: "400 g",
+                                            itemPrize: 60)
+                            Spacer()
+                            groceryItemList(quantity: 0,
+                                            itemImage: "carrot",
+                                            itemName: "Carrot",
+                                            itemQuantity: "200 g",
+                                            itemPrize: 24)
+                            
+                        }
+                        .padding()
+                        
+                        HStack {
+                            groceryItemList(quantity: 0,
+                                            itemImage: "Onions",
+                                            itemName: "Onion",
+                                            itemQuantity: "1Kg",
+                                            itemPrize: 56)
+                            Spacer()
+                            groceryItemList(quantity: 0,
+                                            itemImage: "Capsicum",
+                                            itemName: "Capsicum",
+                                            itemQuantity: "250 g",
+                                            itemPrize: 25)
+                            
+                        }
+                        .padding()
                     }
                 }
                 
