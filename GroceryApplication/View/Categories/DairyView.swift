@@ -84,7 +84,8 @@ struct DairyView: View {
             
         }
         
-        FooterView()
+            FooterView()
+        
         
     }
 }

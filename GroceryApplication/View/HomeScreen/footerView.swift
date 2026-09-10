@@ -6,14 +6,17 @@ struct FooterView: View {
     
     var body: some View {
         HStack {
-            
-            footerItem(
-                icon: "house",
-                iconOnChange: "house.fill",
-                title: "Home",
-                index: 0
-            )
-            
+            NavigationLink{
+                HomeScreen()
+            }
+            label:{
+                footerItem(
+                    icon: "house",
+                    iconOnChange: "house.fill",
+                    title: "Home",
+                    index: 0
+                )
+            }
             
             footerItem(
                 icon: "cart",

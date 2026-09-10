@@ -40,10 +40,8 @@ struct WelcomeView: View {
                         .padding(.bottom)
 
                     NavigationLink {
-                        NavigationStack{
-                            HomeScreen()
-                        }
-                    } label: {
+                        HomeScreen()
+                        } label: {
                         roundedButton(title: "Get Started")
                     }
                     .frame(maxWidth: .infinity)

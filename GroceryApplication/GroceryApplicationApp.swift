@@ -46,7 +46,9 @@ struct GroceryApplicationApp: App {
 
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            
+                WelcomeView()
+            
         }
     }
 }
